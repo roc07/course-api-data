@@ -3,6 +3,7 @@ package io.javabrains.springbootstarter.courses;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,11 @@ public class CourseController {
 
 	@Autowired
 	private CourseService courseService;
+	
+	@RequestMapping("/hellow")
+	public String starter(Model theModel) {
+		return "hellow";
+	}
 	
 	@RequestMapping("/topics/{id}/courses")
 	public List<Course> getAllCourses(@PathVariable String id) {
